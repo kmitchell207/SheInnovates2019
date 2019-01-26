@@ -217,19 +217,20 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
 
-        Assistant assistantservice = new Assistant("2018-02-16");
+        Assistant assistantservice = new Assistant("2019-01-01");
         //If you like to use USERNAME AND PASSWORD
         //Your Username: "apikey", password: "<APIKEY_VALUE>"
-        assistantservice.setUsernameAndPassword("apikey", "<API_KEY_VALUE>");
+        assistantservice.setUsernameAndPassword("apikey", "cWKTj2j41bPncZ53vWvZhmtOrQpC5enGCUcQz1I9VcNt");
 
         //TODO: Uncomment this line if you want to use API KEY
-        //assistantservice.setApiKey("<API_KEY_VALUE>");
+       // assistantservice.setApiKey("gF42hRIMCy3AV3uhQVsvc-GTxAe3YQQl8lhsZg6lWykX");
 
         //Set endpoint which is the URL. Default value: https://gateway.watsonplatform.net/assistant/api
-        assistantservice.setEndPoint("<ASSISTANT_URL>");
+        assistantservice.setEndPoint("https://gateway.watsonplatform.net/assistant/api");
         InputData input = new InputData.Builder(inputmessage).build();
         //WORKSPACES are now SKILLS
-        MessageOptions options = new MessageOptions.Builder().workspaceId("<WORKSPACE_ID>").input(input).context(context).build();
+        MessageOptions options = new MessageOptions.Builder().workspaceId("0b1c0f64-017c-410f-bd0e-8e6817ceb9fa").input(input).context(context).build();
+        Log.i("Options issue",options.toString());
         MessageResponse response = assistantservice.message(options).execute();
                     Log.i(TAG, "run: "+response);
 
